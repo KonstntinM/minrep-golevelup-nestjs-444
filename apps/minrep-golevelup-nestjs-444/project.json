@@ -1,0 +1,52 @@
+{
+  "root": "apps/minrep-golevelup-nestjs-444",
+  "sourceRoot": "apps/minrep-golevelup-nestjs-444/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/minrep-golevelup-nestjs-444",
+        "main": "apps/minrep-golevelup-nestjs-444/src/main.ts",
+        "tsConfig": "apps/minrep-golevelup-nestjs-444/tsconfig.app.json",
+        "assets": ["apps/minrep-golevelup-nestjs-444/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/minrep-golevelup-nestjs-444/src/environments/environment.ts",
+              "with": "apps/minrep-golevelup-nestjs-444/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "minrep-golevelup-nestjs-444:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/minrep-golevelup-nestjs-444/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/minrep-golevelup-nestjs-444"],
+      "options": {
+        "jestConfig": "apps/minrep-golevelup-nestjs-444/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
