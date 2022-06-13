@@ -7,7 +7,7 @@ Minimum code reproduction of the error seen in issue 444 of @golevelup/nestjs/st
 To reproduce this error clone this repository and run
 
 * `npm i`
-* `nx test`
+* `npx nx test`
 
 ## Error Described
 
